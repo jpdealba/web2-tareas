@@ -1,4 +1,7 @@
-$background-color: #333;
-$primary-color: "#000";
-$disabeld-color: "#ccc";
-$position: "bottom";
+$breakpints: (
+	"xs":  0px,
+	"phone": 0px,
+	"tablet": 768px,
+	"desktop": 1024px
+);
+$num-columns: 12;
