@@ -7,9 +7,52 @@
 	</form>
 	{{!-- <h1>{{title}}</h1>
 	<img src={{image}} alt="Italian Trulli" style="width:400px;height:400px;"> --}}
-	{{#each articles}}
-		    <tr>
-				<td>{{author }}</td>      
-			</tr>
-	{{/each}}
+	<div class="container">
+		<div class="row">
+			{{#each articles}}
+				<div class="col-12-xs col-6-s col-4-m col-3-l">
+					<div class="elm-first" >
+						<img src={{urlToImage}} alt="Italian Trulli" style="width:100%;">
+						<h4>{{title }} </h4>
+						<div style="display: flex; justify-content: space-between">
+							<div ></div>
+							<div ></div>
+							{{!-- <a href="url" id="more" onclick='function() {modal.style.display = "block";}'>See more</a> --}}
+							<button name="more" onclick="openModal({{@index}})">See More</button>
+						</div>
+					</div>
+				</div>
+				<div id={{@index}} class="modal" >
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<img src={{urlToImage}} alt="Italian Trulli" style="width:100%;height:60%;margin-top: 20px"/>
+						<p>Date Published: {{publishedAt}}</p>
+						<h2>{{title}}</h2>
+						<h4>{{description}}</h4>
+						<p>{{content}}</p>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+	<script>
+		const openModal = async (index) => {
+			var modal = document.getElementById(index);
+			var btn = document.getElementsByName("more")[index]
+			var span = document.getElementsByClassName("close")[index];
+			modal.style.display = "block";
+			span.onclick = function() {
+				console.log(index)
+				modal.style.display = "none";
+			}
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					console.log(index)
+					modal.style.display = "none";
+				}
+			}
+		}		
+
+
+	</script>
 </div>

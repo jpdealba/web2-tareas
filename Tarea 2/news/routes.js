@@ -5,10 +5,10 @@ const router = express.Router();
 //
 router.get("/", async (req, res) => {
   // console.log(getNews());
-  let disabled = false;
-  let articles = await getNews();
-  console.log(articles);
+  var disabled = false;
+  var articles = await getNews();
   // res.send("endpoint de noticias");
+
   res.render("index", {
     title: "Prueba desde routes.js",
     image:
