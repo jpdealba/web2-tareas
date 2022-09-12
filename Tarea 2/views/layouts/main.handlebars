@@ -8,5 +8,11 @@
 	<link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
 	<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
+	<form >
+		<div class="row">
+			<input type="text" id="search" class="search-bar" placeholder="Search News" {{#if disabled}} disabled {{/if}}>
+			<input class="search-button" type="submit" value="Search" {{#if disabled}} disabled {{/if}}>
+		</div>
+	</form>
 	{{{body}}}
 </html>

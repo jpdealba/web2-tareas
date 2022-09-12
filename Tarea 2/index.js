@@ -13,17 +13,10 @@ app.set("view engine", "handlebars");
 app.use("/assets", express.static(path.join(__dirname, "public")));
 
 const middleWare = (req, res, next) => {
-  // this is going to be usefull for future implementatons
   next();
 };
 
 app.get("/", (req, res) => {
-  //res.sendFile(path.join(__dirname, "/index.html"));
-  // res.render("index", {
-  //   title: "Prueba desde index.js",
-  //   image:
-  //     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-  // });
   res.redirect("/news");
 });
 
