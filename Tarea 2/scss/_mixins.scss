@@ -1,0 +1,26 @@
+//default (botones, etc)
+@import "variables";
+
+@mixin xs {
+	@media (min-width: map-get($breakpints, "xs")) {
+		@content;
+	}
+}
+
+@mixin s {
+	@media (min-width: map-get($breakpints, "phone")) {
+		@content;
+	}
+}
+
+@mixin m {
+	@media (min-width: map-get($breakpints, "tablet")) {
+		@content;
+	}
+}
+
+@mixin l {
+	@media (min-width: map-get($breakpints, "desktop")) {
+		@content;
+	}
+}
