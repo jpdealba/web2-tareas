@@ -8,7 +8,7 @@
 							{{#if urlToImage}}
 								<img src={{urlToImage}} alt="Italian Trulli" style="width:100%;height:70%">
 							{{else}}
-								<img src="assets/images/news.jpeg" style="width:100%;height:70%;">
+								<img src="/assets/images/news.jpeg" style="width:100%;height:70%;">
 							{{/if}}
 							<div style="height: 30%">
 								<h4 style="height: 30%">{{title }} </h4>
@@ -49,27 +49,8 @@
 			<div class="row">
 				<div class="loader"></div>
 			</div>
+			<h3 style="text-align: center">No News Available. You Can Use The Top Bar To Search.</h3>
 		{{/if}}
 
 	</div>
-	<script>
-		const openModal = async (index) => {
-			var modal = document.getElementById(index);
-			var btn = document.getElementsByName("more")[index]
-			var span = document.getElementsByClassName("close")[index];
-			modal.style.display = "block";
-			span.onclick = function() {
-				console.log(index)
-				modal.style.display = "none";
-			}
-			window.onclick = function(event) {
-				if (event.target == modal) {
-					console.log(index)
-					modal.style.display = "none";
-				}
-			}
-		}		
-
-
-	</script>
 </div>

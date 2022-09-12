@@ -1,16 +1,29 @@
 const express = require("express");
 const { getNews } = require("./newsManagement");
+const { testNews } = require("./testData");
 const router = express.Router();
 
 //
-router.get("/", async (req, res) => {
-  var disabled = false;
-  var articles = await getNews();
-
+router.get("/", (req, res) => {
+  // var articles = await getNews();
+  // res.render("index", {
+  //   disabled: disabled,
+  //   articles: articles,
+  // });
   res.render("index", {
-    disabled: disabled,
-    articles: articles,
+    articles: [],
   });
 });
+
+router.get(`/search`, async (req, res) => {
+  // console.log(req.query.query);
+  // res.render("new", {});
+  var articles = await getNews(req.query.query);
+  res.render("index", {
+    articles: articles,
+    searchTerm: req.query.query,
+  });
+});
+
 //
 module.exports = router;
