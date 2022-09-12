@@ -1,14 +1,12 @@
 const openModal = async (index) => {
   var modal = document.getElementById(index);
-  var span = document.getElementsByClassName("close")[index];
+  var span = document.getElementsByClassName("close")[index + 1];
   modal.style.display = "block";
   span.onclick = function () {
-    console.log(index);
     modal.style.display = "none";
   };
   window.onclick = function (event) {
     if (event.target == modal) {
-      console.log(index);
       modal.style.display = "none";
     }
   };
