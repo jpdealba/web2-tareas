@@ -15,6 +15,30 @@ body {
 .row {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+}
+
+.search-bar {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right-width: 0;
+  margin-top: 20px;
+  width: 75%;
+  height: 50px;
+  padding-left: 20px;
+  font-size: medium;
+}
+
+.search-button {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-top: 20px;
+  width: 15%;
+  font-size: medium;
+  background-color: coral;
+  color: black;
+  border-color: black;
+  cursor: pointer;
 }
 
 .element, .elm-fourth, .elm-third, .elm-second, .elm-first {
@@ -296,3 +320,5 @@ body {
     width: 100%;
   }
 }
+
+/*# sourceMappingURL=styles.css.map */

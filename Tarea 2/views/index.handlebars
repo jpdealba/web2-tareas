@@ -1,4 +1,15 @@
 <div>
-	<h1>{{title}}</h1>
-	<img src={{image}} alt="Italian Trulli" style="width:400px;height:400px;">
+	<form >
+		<div class="row">
+			<input type="text" id="search" class="search-bar" placeholder="Search News" {{#if disabled}} disabled {{/if}}>
+			<input class="search-button" type="submit" value="Search" {{#if disabled}} disabled {{/if}}>
+		</div>
+	</form>
+	{{!-- <h1>{{title}}</h1>
+	<img src={{image}} alt="Italian Trulli" style="width:400px;height:400px;"> --}}
+	{{#each articles}}
+		    <tr>
+				<td>{{author }}</td>      
+			</tr>
+	{{/each}}
 </div>

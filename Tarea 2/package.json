@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node",
     "dev": "nodemon .",
-    "styles:dev": "sass scss:public --watch",
-    "styles": "sass scss:public --no-source-map"
+    "styles:dev": "sass scss:public/css --watch",
+    "styles": "sass scss:public/css --no-source-map"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "axios": "^0.27.2",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
+    "moment": "^2.29.4",
     "nodemon": "^2.0.19",
     "sass": "^1.54.9"
   }
