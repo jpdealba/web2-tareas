@@ -4,10 +4,11 @@ GET http://localhost:3000/
 GET http://localhost:3000/news/search?query=tesla
 ![Alt text](public/images/readme/query.png?raw=true "Query Page")
 
-This endpoint can be done with or without query Ex:
-GET http://localhost:3000/news/search?query=tesla&type=json
-GET http://localhost:3000/news/search?type=json
-Param: "type": "json"
+JSON query  
+Param: "type": "json"  
+This endpoint can be done with or without query Ex:  
+GET http://localhost:3000/news/search?query=tesla&type=json  
+GET http://localhost:3000/news/search?type=json  
 ![Alt text](public/images/readme/postman.png?raw=true "Query Page")
 
 Click on See More on any news
