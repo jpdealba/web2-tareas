@@ -17,7 +17,7 @@ export class NoticiasComponent implements OnInit {
   constructor(private servicioDeNoticias: NoticiaService) {}
 
   ngOnInit(): void {
-    
+
   }
 
   buscar(): void {
@@ -36,7 +36,6 @@ export class NoticiasComponent implements OnInit {
   }
 
   selectNoticia(noticia: any){
-    console.log('Seleccionaste la noticia:', noticia)
     this.current = noticia;
   }
 
