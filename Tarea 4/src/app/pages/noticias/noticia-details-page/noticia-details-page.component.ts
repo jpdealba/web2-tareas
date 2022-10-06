@@ -45,6 +45,6 @@ export class NoticiaDetailsPageComponent implements OnInit {
 
 
   navigateBack(): void {
-    this.router.navigate(['/noticias'], { queryParams: {searchParam: this.searchParam}  });
+    this.router.navigate(['/noticias'], { queryParams: { searchParam: this.searchParam }, replaceUrl: true });
   }
 }
