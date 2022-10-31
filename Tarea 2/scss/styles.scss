@@ -1,0 +1,190 @@
+@use "sass:math";
+@import "variables";
+@import "mixins";
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.search-bar {
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-right-width: 0;
+	margin-top: 20px;
+	width: 75%;
+	height: 50px;
+	padding-left: 20px;
+	font-size: medium;
+}
+.search-button {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	margin-top: 20px;
+	text-align: center;
+	width: 15%;
+	font-size: medium;
+	background-color: coral;
+	color: black;
+	border-color: black;
+	cursor: pointer;
+}
+ 
+.element {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	border-radius: 5px;
+	margin: 5px;
+	height: 340px;
+	/* 5px rounded corners */
+}
+img {
+	border-radius: 5px 5px 0 0;
+}
+
+.element:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	cursor: default
+}
+
+.elm-first {
+	@extend .element;
+
+}
+
+// col classes
+@include xs {
+	@for $i from 1 through $num-columns {
+		.col-#{$i}-xs {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $num-columns);
+		}
+	}
+}
+
+button {
+	background: none !important;
+	border: none;
+	right: 0;
+	padding: 0 !important;
+	font-family: arial, sans-serif;
+	color: #069;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+@include s {
+	@for $i from 1 through $num-columns {
+		.col-#{$i}-s {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $num-columns);
+		}
+	}
+}
+
+@include m {
+	@for $i from 1 through $num-columns {
+		.col-#{$i}-m {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $num-columns);
+		}
+	}
+}
+
+@include l {
+	@for $i from 1 through $num-columns {
+		.col-#{$i}-l {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $num-columns);
+		}
+	}
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	height: 450px
+}
+
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.left {
+	float: left;
+	width: 50%;
+	margin-right: 15px;
+
+}
+
+.right {
+	float: right;
+	width: 50%;
+}
+
+.loader {
+	border: 16px solid #f3f3f3;
+	/* Light grey */
+	border-top: 16px solid #3498db;
+	/* Blue */
+	border-radius: 50%;
+	margin-top: 15%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
