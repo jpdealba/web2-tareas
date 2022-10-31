@@ -1,20 +1,20 @@
 const database = require("./../../database/database");
 
 class User {
-  async findAll(collection) {
+  async findAll() {
     const db = database();
-    const collection = db.collection(collection);
+    const collection = db.collection("users");
     const result = await collection.find({}).toArray();
     return result;
   }
 
-  async findOne(id, collection) {
+  async findOne(id) {
     const db = database();
-    const collection = db.collection(collection);
+    const collection = db.collection("users");
     const result = await collection.findOne({ _id: id });
     console.log(result);
     return result;
   }
 }
 
-module.exports = new User();
+module.exports = User;

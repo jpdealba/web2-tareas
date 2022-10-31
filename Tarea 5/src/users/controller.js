@@ -1,15 +1,19 @@
-const Model = require("./model");
+const UserModel = require("./model");
 
 class UsersController {
-  async getAll(req, res) {
-    const users = await Model.findAll("users");
-    res.send(users);
+  getAll(req, res) {
+    const User = new UserModel();
+    User.findAll().then((res) => {
+      res.send(res);
+    });
   }
 
-  async getOne(req, res) {
+  getOne(req, res) {
+    const User = new UserModel();
     const userId = req.params.id;
-    const user = await Model.findOne(userId, "users");
-    res.send(user);
+    User.findOne(userId).then((res) => {
+      res.send(res);
+    });
   }
 }
 
