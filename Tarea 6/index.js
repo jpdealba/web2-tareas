@@ -9,9 +9,9 @@ const app = express();
 const port = process.env.PORT || 4000;
 app.use(bodyParser.json());
 
-app.use("/api/users", (req, res, next) => {
-  tokenCheckHandler(req, res, next);
-});
+// app.use("/api/users", (req, res, next) => {
+//   tokenCheckHandler(req, res, next);
+// });
 
 app.use("/api", apiRoutes);
 

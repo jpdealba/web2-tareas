@@ -17,9 +17,21 @@ class User {
   }
 
   async createOne(data) {
+    const user = await this.findOneByEmail(data.email);
+
+    if (user) {
+      return "user already created";
+    } else {
+      const db = database();
+      const collection = db.collection("users");
+      await collection.insertOne(data);
+      return "user created";
+    }
+  }
+  async findOneByEmail(email) {
     const db = database();
     const collection = db.collection("users");
-    const result = await collection.insertOne(data);
+    const result = await collection.findOne({ email: email });
     return result;
   }
 }
